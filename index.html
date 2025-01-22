@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Splitter</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="main-mandian">
+ 
+ 
+ 
+    <div class="container">
+        <h1>Groupify</h1>
+        <div class="upload-section">
+            <label for="file-upload" class="file-upload-label">
+                Drag and drop or click to upload your CSV
+            </label>
+            <input type="file" id="file-upload" accept=".csv">
+        </div>
+        <div class="options">
+            <label>
+                Total members per team: 
+                <input type="number" id="team-size" min="2" value="4">
+            </label>
+            <label>
+                Minimum boys in each team: 
+                <input type="number" id="min-boys" min="0" value="0">
+            </label>
+            <label>
+                Minimum girls in each team: 
+                <input type="number" id="min-girls" min="0" value="0">
+            </label>
+        </div>
+        <button id="process-btn">Split Teams</button>
+        <button id="download-btn" style="display: none;">Download CSV</button>
+    </div>
+ 
+  
+    <div id="toast-container"></div>
+  
+    <script src="./main.js"></script>
+
+   <!-- Sticky Footer -->
+   <footer id="footer">
+    <div class="footer-container">
+        <p>© 2025 School Of Innovation | Designed with ♥ </p>
+        
+    </div>
+</footer>
+</div>
+</body>
+</html>
