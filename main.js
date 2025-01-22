@@ -79,6 +79,16 @@ function generateCSV(teams) {
     return [headers, ...rows].map(row => row.join(",")).join("\n");
 }
 
+// This feature yet to be implemented
+/*
+function splitByDepartment(participants){
+    const ece = participants.filter(p => p.department === 'ece');
+    const aids = participants.filter(p => p.department === 'aids');
+    const mech = participants.filter(p => p.department === 'mech');
+    const cse = participants.filter(p => p.department === 'cse');
+}
+    */
+
 function downloadCSV(csvContent) {
     const blob = new Blob([csvContent], { type: 'text/csv' });
     const url = URL.createObjectURL(blob);
@@ -97,3 +107,4 @@ function showToast(message, type) {
 
     setTimeout(() => toast.remove(), 4000);
 }
+
