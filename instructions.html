@@ -14,11 +14,66 @@
             <a href="#" class="logo"></a>
             <ul class="nav-links">
                 <li><a href="./index.html">Home</a></li>
-                <li><a href="#footer">Contact</a></li>
+        
             </ul>
         </div>
     </nav>
-   
+    <header class="header">
+        <div class="container">
+            <h1>Groupify - FAQ</h1>
+            <p style="color: black;">Find answers to common questions about Groupify</p>
+        </div>
+    </header>
+
+    <main class="faq-container">
+        <div class="faq">
+            <h2>What is Groupify?</h2>
+            <p>Groupify is a web app that helps you split members into balanced teams based on your preferences. Simply upload a CSV file, configure the settings, and let Groupify handle the rest.</p>
+        </div>
+
+        <div class="faq">
+            <h2>What are the mandatory columns in the CSV?</h2>
+            <p>The CSV must include the columns <code>Name</code> and <code>Gender</code>. These can be in any case (e.g., <code>name</code>, <code>NAME</code>) and will be automatically standardized.</p>
+        </div>
+
+        <div class="faq">
+            <h2>How does Groupify handle gender values?</h2>
+            <p>The app recognizes <code>Male</code>, <code>Female</code>, <code>M</code>, and <code>F</code>, in any case (e.g., <code>male</code>, <code>MALE</code>). All values are converted to lowercase for consistency.</p>
+        </div>
+        <div class="faq">
+            <h2>What is the role of the department column?</h2>
+            <p>The department column helps Groupify create interdisciplinary teams by ensuring members from different departments are evenly distributed. This field is optional, but including it enhances the diversity of the teams.</p>
+        </div>
+        
+        <div class="faq">
+            <h2>What if the CSV doesn't include the department column?</h2>
+            <p>If the department column is not included, Groupify will still generate teams based on the available criteria like name, gender, and team size preferences. However, interdisciplinary team splitting will not be possible.</p>
+        </div>
+        
+        <div class="faq">
+            <h2>Are department names case-sensitive?</h2>
+            <p>No, department names are not case-sensitive. Groupify automatically standardizes department names (e.g., <code>CS</code>, <code>cs</code>, and <code>CSE</code> will all be treated consistently).</p>
+        </div>
+
+        <div class="faq">
+            <h2>Can I specify the number of boys and girls in each team?</h2>
+            <p>Yes, you can set the minimum number of boys and girls per team in the configuration options before processing the CSV file.</p>
+        </div>
+
+        <div class="faq">
+            <h2>How can I download the processed data?</h2>
+            <p>Once the teams are generated, you can download the updated CSV file using the "Download" button provided on the main page.</p>
+        </div>
+
+        <div class="faq">
+            <h2>Is my data secure?</h2>
+            <p>Yes, Groupify processes your data locally in your browser. No data is uploaded to a server or shared externally.</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 Groupify | <a href="index.html">Home</a> | <a href="#faq">FAQ</a></p>
+    </footer>
  
     <script src="./main.js"></script>
 
