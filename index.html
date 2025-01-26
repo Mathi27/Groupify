@@ -1,53 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Groupify</title>
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="icon" type="image/x-icon" href="/assets/lob.png">
-</head>
-<body>
-    <div class="Body-Soda">
-
-    <div class="container">
-        <h1>Groupify</h1>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" type="image/x-icon" href="/assets/lob.png" />
+  </head>
+  <body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1><a href="#" class="nav-logo">Groupify</a></h1>
+            <ul class="nav-links">
+                <li><a href="instructions.html">Instructions</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="main-mandian">
+      <div class="container">
         <div class="upload-section">
-            <label for="file-upload" class="file-upload-label">
-                Drag and drop or click to upload your CSV
-            </label>
-            <input type="file" id="file-upload" accept=".csv">
+          <label for="file-upload" class="file-upload-label">
+            Drag and drop or click to upload your CSV
+          </label>
+          <input type="file" id="file-upload" accept=".csv" />
         </div>
         <div class="options">
-            <label>
-                Total members per team: 
-                <input type="number" id="team-size" min="2" value="4">
-            </label>
-            <label>
-                Minimum boys in each team: 
-                <input type="number" id="min-boys" min="0" value="0">
-            </label>
-            <label>
-                Minimum girls in each team: 
-                <input type="number" id="min-girls" min="0" value="0">
-            </label>
+          <label>
+            Total members per team:
+            <input type="number" id="team-size" min="2" value="4" />
+          </label>
+          <label>
+            Minimum boys in each team:
+            <input type="number" id="min-boys" min="0" value="0" />
+          </label>
+          <label>
+            Minimum girls in each team:
+            <input type="number" id="min-girls" min="0" value="0" />
+          </label>
+          <label class="styled-checkbox">
+            Interdisciplinary Teams
+            <input type="checkbox" id="interdisciplinary-check" checked />
+            <span class="checkmark"></span>
+          </label>
         </div>
         <button id="process-btn">Split Teams</button>
-        <button id="download-btn" style="display: none;">Download CSV</button>
+        <button id="download-btn" style="display: none">Download CSV</button>
+      </div>
+      <div id="toast-container"></div>
+      <script src="./main.js"></script>
     </div>
+      <footer id="footer">
+        <div class="footer-container">
+          <p>© 2025 School Of Innovation | Designed with ♥</p>
+        </div>
+      </footer>
+    
+  </body>
  
-  
-    <div id="toast-container"></div>
-  
-    <script src="./main.js"></script>
-
- 
-   <footer id="footer">
-    <div class="footer-container">
-        <p>© 2025 School Of Innovation | Designed with ♥ </p>
-        
-    </div>
-</footer>
-</div>
-</body>
 </html>
