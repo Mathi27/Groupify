@@ -172,46 +172,51 @@ function normalizeCategory(category) {
   return categoryMap[normalized] || null;
 }
 
-function splitIntoCategoryBasedTeams(participants, teamSize) {
-  const categories = {
-    Excellent: [],
-    Proficient: [],
-    Ideal: [],
-    Capable: [],
-  };
+function splitIntoCategoryTeams(participants, teamSize) {
+    const categories = {
+        Excellent: [],
+        Proficient: [],
+        Ideal: [],
+        Capable: []
+    };
+    participants.forEach(person => categories[person.category].push(person));
 
-  participants.forEach((participant) => {
-    if (categories[participant.category]) {
-      categories[participant.category].push(participant);
-    }
-  });
-
-  const teams = [];
-  while (participants.length > 0) {
-    let team = [];
-    if (categories["Proficient"].length > 0) {
-      team.push(categories["Proficient"].pop());
-    } else if (categories["Excellent"].length > 0) {
-      team.push(categories["Excellent"].pop());
-    } else if (categories["Ideal"].length > 0) {
-      team.push(categories["Ideal"].pop());
+    const teams = [];
+    const totalTeams = Math.ceil(participants.length / teamSize);
+    for (let i = 0; i < totalTeams; i++) {
+        teams.push([]);
     }
 
-    while (team.length < teamSize && participants.length > 0) {
-      let added = false;
-      for (let cat of ["Excellent", "Proficient", "Ideal", "Capable"]) {
-        if (categories[cat].length > 0) {
-          team.push(categories[cat].pop());
-          added = true;
-          if (team.length === teamSize) break;
+    let teamIndex = 0;
+    const assignLeaders = (category) => {
+        while (categories[category].length > 0) {
+            teams[teamIndex % totalTeams].push(categories[category].shift());
+            teamIndex++;
         }
-      }
-      if (!added) break;
+    };
+
+    assignLeaders("Excellent");
+    assignLeaders("Proficient");
+    assignLeaders("Ideal");
+
+    teamIndex = 0;
+    while (categories.Capable.length > 0) {
+        if (!teams[teamIndex % totalTeams].some(member => member.category !== "Capable")) {
+            if (categories.Excellent.length > 0) {
+                teams[teamIndex % totalTeams].push(categories.Excellent.shift());
+            } else if (categories.Proficient.length > 0) {
+                teams[teamIndex % totalTeams].push(categories.Proficient.shift());
+            } else if (categories.Ideal.length > 0) {
+                teams[teamIndex % totalTeams].push(categories.Ideal.shift());
+            }
+        }
+        teams[teamIndex % totalTeams].push(categories.Capable.shift());
+        teamIndex++;
     }
-    teams.push(team);
-  }
-  return teams;
+
+    return teams;
 }
+
 
 function generateCSV(teams) {
   const headers = ["Team", "Name", "Gender", "Department", "Category"];
