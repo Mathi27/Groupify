@@ -17,41 +17,46 @@
         </div>
     </nav>
     <div class="main-mandian">
-      <div class="container">
-        <div class="upload-section">
-          <label for="file-upload" class="file-upload-label">
-            Drag and drop or click to upload your CSV
-          </label>
-          <input type="file" id="file-upload" accept=".csv" />
+        <div class="container">
+          <div class="upload-section">
+            <label for="file-upload" class="file-upload-label">
+              Drag and drop or click to upload your CSV
+            </label>
+            <input type="file" id="file-upload" accept=".csv" />
+            <p id="file-name" class="file-name"></p>
+          </div>          
+          
+          <div class="options">
+            <label class="required">
+              Total Members per Team *
+              <input type="number" id="team-size" min="2" value="4" required />
+            </label>
+            
+            <div class="advanced-options">
+              <h4>Advanced Options</h4>
+              <label>Minimum Boys in Each Team: <input type="number" id="min-boys" min="0" value="0" /></label>
+              <label>Minimum Girls in Each Team: <input type="number" id="min-girls" min="0" value="0" /></label>
+              <label class="styled-checkbox">
+                Interdisciplinary Teams
+                <input type="checkbox" id="interdisciplinary-check" checked />
+                <span class="checkmark"></span>
+              </label>
+              <label class="styled-checkbox">
+                EPIC Split (Category-Based)
+                <input type="checkbox" id="category-check" />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+          
+          <div class="button-group">
+            <button id="process-btn">Split Teams</button>
+            <button id="download-btn" style="display: none">Download CSV</button>
+          </div>
         </div>
-        <div class="options">
-          <label>
-            Total members per team:
-            <input type="number" id="team-size" min="2" value="4" />
-          </label>
-          <label>
-            Minimum boys in each team:
-            <input type="number" id="min-boys" min="0" value="0" />
-          </label>
-          <label>
-            Minimum girls in each team:
-            <input type="number" id="min-girls" min="0" value="0" />
-          </label>
-          <label class="styled-checkbox">
-            Interdisciplinary Teams
-            <input type="checkbox" id="interdisciplinary-check" checked />
-            <span class="checkmark"></span>
-          </label>
-          <label class="styled-checkbox">
-            EPIC Split (Category-Based)
-            <input type="checkbox" id="category-check" />
-            <span class="checkmark"></span>
-          </label>
-        </div>
-        <button id="process-btn">Split Teams</button>
-        <button id="download-btn" style="display: none">Download CSV</button>
+        
+        <div id="toast-container"></div>
       </div>
-      <div id="toast-container"></div>
       <script src="./main.js"></script>
     </div>
       <footer id="footer">
@@ -60,5 +65,4 @@
         </div>
       </footer>
   </body>
- 
 </html>

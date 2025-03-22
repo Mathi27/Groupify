@@ -100,7 +100,6 @@ body, html {
   margin: 0;
   padding: 0;
   display: flex;
-
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -110,11 +109,19 @@ body, html {
   flex-direction: column;
 }
 
+.file-name {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #008f8a;
+  font-weight: bold;
+}
+
+
 /* Sticky Navigation Bar */
 .navbar {
   background-color: #0080b6;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 10px;
   position: sticky;
   top: 0;
   width: 100%;
@@ -172,52 +179,111 @@ li a:hover {
   display: flex;
   flex-direction: row;
 }
-.container {
-  text-align: center;
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 400px;
-}
+
 
 h1 {
   margin-bottom: 20px;
   color: #0080b6;
 }
 
+/* Main Container */
+.container {
+  max-width: 900px;
+  margin: 5px auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Upload Section */
 .upload-section {
-  margin: 20px 0;
-  position: relative;
+  border: 1px dashed #007bff;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #f9f9f9;
+  transition: background 0.3s;
+}
+
+.upload-section:hover {
+  background: #eef6ff;
 }
 
 .file-upload-label {
-  display: block;
-  border: 2px dashed #00a7be;
-  padding: 20px;
-  cursor: pointer;
-  color: #00a7be;
-  border-radius: 5px;
-  background: #f0faff;
-}
-
-.file-upload-label:hover {
-  background: #e0f7ff;
+  font-size: 1rem;
+  color: #007bff;
 }
 
 #file-upload {
   display: none;
 }
 
+/* Input Sections */
 .options {
-  margin: 20px 0;
-  text-align: left;
-  color: #40589f;
+  margin-top: 1rem;
+  padding: 10px;
+  background: #f1f3f5;
+  border-radius: 8px;
 }
 
-label {
-  display: block;
-  margin: 10px 0;
+.options label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input[type="number"],
+input[type="checkbox"] {
+  margin-left: 0.5rem;
+  border: none;
+  border-radius: 5px;
+}
+
+#team-size {
+  padding: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Advanced Splitting Options */
+.advanced-options {
+  margin-top: 1rem;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  background: #e3f2fd;
+  border-radius: 8px;
+  font-weight: 500;
+  text-align: center;
+}
+
+#min-boys {
+  padding: 0.4rem;
+  margin-bottom: 2px;
+}
+
+#min-girls {
+  padding: 0.4rem;
+}
+
+.advanced-options label {
+  font-size: 14px;
+}
+
+.advanced-options h4 {
+  color: #007bff;
+  padding-top: 5px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1.5rem;
 }
 
 button {
@@ -225,6 +291,7 @@ button {
   color: white;
   border: none;
   padding: 10px 20px;
+  align-items: center;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
@@ -234,6 +301,8 @@ button {
 button:hover {
   background-color: #008f8a;
 }
+
+
 
 #toast-container {
   position: fixed;
@@ -250,11 +319,12 @@ button:hover {
   margin-top: 10px;
   animation: slide-in 0.5s ease-out, fade-out 0.5s ease-in 3s forwards;
 }
+
 /* Footer */
 footer {
   background-color: #0080b6;
   color: white;
-  padding: 20px 10px;
+  padding: 10px 10px;
   text-align: center;
   position: sticky;
   bottom: 0;
