@@ -61,8 +61,33 @@
         </div>
 
         <div class="faq">
+            <h2>How does Groupify handle category-based team splitting?</h2>
+            <p>Groupify can split teams based on skill categories like <code>Excellent</code>, <code>Proficient</code>, <code>Ideal</code>, and <code>Capable</code>. This ensures balanced teams with a mix of skill levels.</p>
+        </div>
+
+        <div class="faq">
+            <h2>What are the mandatory columns for category-based splitting?</h2>
+            <p>In addition to Name and Gender, the CSV should include a Category column where each member is assigned a EPIC category.</p>
+        </div>
+
+        <div class="faq">
+            <h2>Are category values case-sensitive?</h2>
+            <p>No, category values are not case-sensitive. Groupify automatically standardizes them. (e.g., <code>"e"</code>, <code>"E"</code>, <code>"EXCELLENT"</code> and <code>"excellent"</code> will all be treated the same).</p>
+        </div>
+
+        <div class="faq">
+            <h2>What happens if the CSV does not include a category column?</h2>
+            <p>If the category column is missing, Groupify will still generate teams based on other factors like gender and team size. However, category-based splitting won't be possible.</p>
+        </div>
+
+        <div class="faq">
+            <h2>How does Groupify assign team leaders?</h2>
+            <p>Groupify ensures each team has a leader, prioritizing members from the <code>Excellent</code> category. If needed, it selects from the <code>Proficient</code> category. Team leaders are assigned internally but not explicitly marked in the downloaded CSV.</p>
+        </div>        
+
+        <div class="faq">
             <h2>How can I download the processed data?</h2>
-            <p>Once the teams are generated, you can download the updated CSV file using the "Download" button provided on the main page.</p>
+            <p>Once the teams are generated, you can download the updated CSV file using the <code>Download</code> button provided on the main page.</p>
         </div>
 
         <div class="faq">
